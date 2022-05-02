@@ -1,6 +1,61 @@
+body {
+    background: yellow;
+}
+
+// Top area
+
 h1 {
     text-align: center;
 }
+
+#add-task {
+    background-color: rgb(16, 16, 207);
+    color: white;
+    border-radius: 3px;
+    border-color: rgb(16, 16, 207);
+    margin-left: 5px;
+}
+
+.add-task {
+    display: flex;
+    justify-content: center;
+}
+
+// Task List area
+
+ul {
+    list-style-type: none;
+    box-shadow: 0 4px 8px 0;
+    border: solid gray 1px;
+    position: relative;
+    left: 29%;
+    width: 750px;
+    top: 20px;
+    padding-left: 0;
+    background: white;
+}
+
+li {
+    padding: 15px;
+    border-bottom: solid gray 1px;
+}
+
+.checkbox {
+    margin-right: 50px;
+}
+
+.fa-trash-can {
+    color: red;
+    display: flex;
+    position: absolute;
+    right: 20px;
+}
+
+#todo-item {
+    width: 500px;
+}
+
+// styling to add
 
 .mark-done {
     text-decoration: line-through;

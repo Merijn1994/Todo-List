@@ -40,11 +40,7 @@ const getTasks = async () => {
 const deleteTask = async () => {
     const array = await getTasks();
     const settings = {
-        method: 'DELETE',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        }
+        method: 'DELETE'
     };
     try {
         const response = await fetch(`http://localhost:3000/${smth}`, settings);

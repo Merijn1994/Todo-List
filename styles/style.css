@@ -1,5 +1,61 @@
+body {
+  background: yellow;
+}
+
 h1 {
   text-align: center;
+}
+
+#add-task {
+  background-color: #1010cf;
+  color: white;
+  border-radius: 3px;
+  border-color: #1010cf;
+  margin-left: 5px;
+}
+
+.add-task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  -webkit-box-shadow: 0 4px 8px 0;
+          box-shadow: 0 4px 8px 0;
+  border: solid gray 1px;
+  position: relative;
+  left: 29%;
+  width: 750px;
+  top: 20px;
+  padding-left: 0;
+  background: white;
+}
+
+li {
+  padding: 15px;
+  border-bottom: solid gray 1px;
+}
+
+.checkbox {
+  margin-right: 50px;
+}
+
+.fa-trash-can {
+  color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 20px;
+}
+
+#todo-item {
+  width: 500px;
 }
 
 .mark-done {
