@@ -33,7 +33,7 @@ const createToDoList = async () => {
             putTaskDone(task._id);
         });
 
-        taskP.addEventListener("click", event => {
+        taskP.addEventListener("click", () => {
             putTaskDescription(task._id);
             toDoList.innerHTML = "";
             createToDoList();
@@ -45,36 +45,13 @@ createToDoList();
 
 // add new task to the list
 
-const addTaskToList = async() => {
-    postTask();
-    const tasks = await getTasks();
-    const taskToAd = tasks[tasks.length - 1];
-
-    const taskLi = document.createElement("li");
-    const taskP = document.createElement("p");
-    const taskText = document.createTextNode(task.description);
-    
-    const checkbox = document.createElement("input");
-    checkbox.type="checkbox";
-    checkbox.classList.add("checkbox");
-
-    const removeButtonIcon = document.createElement("i");
-    removeButtonIcon.classList.add("fa-solid");
-    removeButtonIcon.classList.add("fa-trash-can");
-
-    toDoList.appendChild(taskLi);
-    taskLi.appendChild(checkbox);
-    taskLi.appendChild(taskP);
-    taskP.appendChild(taskText);
-    taskLi.appendChild(removeButtonIcon);
-
-    document.getElementById("todo-item").value='';
-}
-
-// event listener to add a task
-
 const addTaskButton = document.getElementById("add-task");
-addTaskButton.addEventListener("click", addTaskToList);
+addTaskButton.addEventListener("click", () => {
+    postTask();
+    toDoList.innerHTML = "";
+    createToDoList();
+    document.getElementById("todo-item").value='';
+});
 
 // remove task from the list
 
@@ -95,6 +72,7 @@ const checkTaskFromList = () => {
     const checkboxes = Array.from(document.getElementsByClassName("checkbox"));
     checkboxes.forEach(box => {
         box.addEventListener("click", event => {
+            console.log(event);
             event.path[1].classList.add("mark-done");
         });
     });
