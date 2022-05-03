@@ -72,10 +72,8 @@ const putTaskDone = async listId => {
     }
 }
 
-let update = ""
-
 const putTaskDescription = async listId => {
-    update = prompt("Change your task:")
+    let update = prompt("Change your task:")
     const putTask = {description: update};
     const settings = {
         method: 'PUT',
