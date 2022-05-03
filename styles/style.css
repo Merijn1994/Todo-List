@@ -1,5 +1,5 @@
 body {
-  background: yellow;
+  background: #fce205;
 }
 
 h1 {
@@ -21,24 +21,16 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 20px;
 }
 
 ul#todo-list {
   list-style-type: none;
-  width: 750px;
   padding-left: 0;
   background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
+  width: 750px;
+  margin: 0 auto;
 }
 
 li {
@@ -48,6 +40,10 @@ li {
 
 .checkbox {
   margin-right: 50px;
+}
+
+p {
+  display: inline;
 }
 
 .fa-trash-can {

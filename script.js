@@ -8,6 +8,7 @@ const createToDoList = async () => {
     const tasks = await getTasks();
     tasks.forEach(task => {
         const taskLi = document.createElement("li");
+        const taskP = document.createElement("p");
         const taskText = document.createTextNode(task.description);
         
         const checkbox = document.createElement("input");
@@ -20,7 +21,8 @@ const createToDoList = async () => {
 
         toDoList.appendChild(taskLi);
         taskLi.appendChild(checkbox);
-        taskLi.appendChild(taskText);
+        taskLi.appendChild(taskP);
+        taskP.appendChild(taskText);
         taskLi.appendChild(removeButtonIcon);
 
         removeButtonIcon.addEventListener("click", () => {
@@ -31,9 +33,10 @@ const createToDoList = async () => {
             putTaskDone(task._id);
         });
 
-        taskText.addEventListener("click", event => {
-            console.log(event);
+        taskP.addEventListener("click", event => {
             putTaskDescription(task._id);
+            toDoList.innerHTML = "";
+            createToDoList();
         });
     });
 }
@@ -48,8 +51,9 @@ const addTaskToList = async() => {
     const taskToAd = tasks[tasks.length - 1];
 
     const taskLi = document.createElement("li");
-    const taskText = document.createTextNode(taskToAd.description);
-
+    const taskP = document.createElement("p");
+    const taskText = document.createTextNode(task.description);
+    
     const checkbox = document.createElement("input");
     checkbox.type="checkbox";
     checkbox.classList.add("checkbox");
@@ -60,11 +64,9 @@ const addTaskToList = async() => {
 
     toDoList.appendChild(taskLi);
     taskLi.appendChild(checkbox);
-    taskLi.appendChild(taskText);
+    taskLi.appendChild(taskP);
+    taskP.appendChild(taskText);
     taskLi.appendChild(removeButtonIcon);
-
-    removeButtonIcon.addEventListener("click", () => {deleteTask(taskToAd._id)});
-    checkbox.addEventListener("click", () => {putTask(taskToAd._id)});
 
     document.getElementById("todo-item").value='';
 }
@@ -99,14 +101,3 @@ const checkTaskFromList = () => {
 }
 
 setInterval(checkTaskFromList, 100);
-
-const updateTaskInList = () => {
-    const text = Array.from(document.getElementsByTagName("li"));
-    text.forEach(li => {
-        li.addEventListener("click", event => {
-            console.log(event.target);
-        });
-    });
-}
-
-setTimeout(updateTaskInList, 1000);

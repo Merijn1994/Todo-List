@@ -1,5 +1,5 @@
 body {
-    background: yellow;
+    background: #fce205;
 }
 
 // Top area
@@ -19,19 +19,18 @@ h1 {
 .add-task {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 // Task List area
 
 ul#todo-list {
     list-style-type: none;
-    width: 750px;
     padding-left: 0;
     background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
+    width: 750px;
+    margin: 0 auto;
 }
 
 li {
@@ -41,6 +40,10 @@ li {
 
 .checkbox {
     margin-right: 50px;
+}
+
+p {
+    display: inline;
 }
 
 .fa-trash-can {
